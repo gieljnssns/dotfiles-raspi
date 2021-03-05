@@ -8,20 +8,20 @@ ln -sf ~/dotfiles/config/.gitignore ~
 echo
 echo "** Installing apt packages"
 sudo -n apt-get update
-sudo -n DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends zsh fzf vim jq
+sudo -n DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends zsh
 
 USER=`whoami`
 sudo -n chsh $USER -s $(which zsh)
 
 # GH CLI
-echo
-echo "** Downloading GitHub CLI"
-curl -s https://api.github.com/repos/cli/cli/releases/latest \
-  | jq '.assets[] | select(.name | endswith("_linux_amd64.deb")).browser_download_url' \
-  | xargs curl -O -L
+# echo
+# echo "** Downloading GitHub CLI"
+# curl -s https://api.github.com/repos/cli/cli/releases/latest \
+#   | jq '.assets[] | select(.name | endswith("_linux_amd64.deb")).browser_download_url' \
+#   | xargs curl -O -L
 
-sudo -n dpkg -i ./gh_*.deb
-rm ./gh_*.deb
+# sudo -n dpkg -i ./gh_*.deb
+# rm ./gh_*.deb
 
 # ZSH
 ln -sf ~/dotfiles/config/.zshrc ~/.zshrc
