@@ -1,8 +1,8 @@
 #!/bin/bash
 
 # Git
-ln -sf ~/dotfiles/config/.gitconfig ~
-ln -sf ~/dotfiles/config/.gitignore ~
+# ln -sf ~/dotfiles/config/.gitconfig ~
+# ln -sf ~/dotfiles/config/.gitignore ~
 
 # APT
 echo
