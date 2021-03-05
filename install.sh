@@ -9,7 +9,8 @@ echo
 echo "** Installing apt packages"
 sudo -n apt-get update
 sudo -n apt-get upgrade -y
-sudo -n DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends zsh
+sudo -n apt-get install -y zsh
+# sudo -n DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends zsh
 
 USER=`whoami`
 sudo -n chsh $USER -s $(which zsh)
