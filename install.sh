@@ -43,5 +43,7 @@ ln -sf ~/dotfiles/config/.p10k.zsh ~/.p10k.zsh
 git clone https://github.com/zsh-users/zsh-autosuggestions.git ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions --depth 1
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting --depth 1
 
+ln -sf $DOTFILES_DIR/config/.p10k.zsh ~/.p10k.zsh
+
 echo
 echo "** Done"
