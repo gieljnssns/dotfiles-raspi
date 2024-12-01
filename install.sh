@@ -1,5 +1,6 @@
 #!/bin/bash
 
+DOTFILES_DIR=`pwd`
 # Git
 # ln -sf ~/dotfiles/config/.gitconfig ~
 # ln -sf ~/dotfiles/config/.gitignore ~
@@ -7,9 +8,9 @@
 # APT
 echo
 echo "** Installing apt packages"
-sudo -n apt-get update
-sudo -n apt-get upgrade -y
-sudo -n apt-get install -y zsh
+sudo -n apt update
+sudo -n apt upgrade -y
+sudo -n apt install -y zsh
 # sudo -n DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends zsh
 
 USER=`whoami`
@@ -26,7 +27,7 @@ sudo -n chsh $USER -s $(which zsh)
 # rm ./gh_*.deb
 
 # ZSH
-ln -sf ~/dotfiles/config/.zshrc ~/.zshrc
+ln -sf $DOTFILES_DIR/config/.zshrc ~/.zshrc
 
 # Oh My ZSH
 echo
@@ -37,13 +38,12 @@ CHSH=no RUNZSH=no KEEP_ZSHRC=yes sh -c "$(curl -fsSL https://raw.github.com/ohmy
 
 # Oh my ZSH theme
 git clone https://github.com/romkatv/powerlevel10k.git ~/.oh-my-zsh/custom/themes/powerlevel10k --depth 1
-ln -sf ~/dotfiles/config/.p10k.zsh ~/.p10k.zsh
+ln -sf $DOTFILES_DIR/config/.p10k.zsh ~/.p10k.zsh
 
 # Oh my ZSH plugin
 git clone https://github.com/zsh-users/zsh-autosuggestions.git ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions --depth 1
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting --depth 1
 
-ln -sf $DOTFILES_DIR/config/.p10k.zsh ~/.p10k.zsh
 
 echo
 echo "** Done"
